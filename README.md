@@ -1,6 +1,7 @@
-### Svelte Using TypeScript and PostCss with Rollup.Js ###
-Clean start for new projects where you want to test out stuff.
-Svelte recently got full support for TypeScript, so wanted to
-test it out. Also wanted to see performance of Rollup.Js as a
-contrast to webpack which i normally use.
+# ryanisler.com (Svelte)
 
+This is the code-base for my new personal website. I thought it was time for a new look-and-feel for my projects!
+
+# Credits
+
+Special thanks to [Fredrik Gärdin](https://github.com/systerdyster) for the awesome Svelte boilerplate!

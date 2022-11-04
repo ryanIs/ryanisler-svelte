@@ -1,9 +1,7 @@
 import './style/index.css';
 
-import Hello from './components/Hello.svelte';
+import Main from './Main.svelte';
 
-const app = new Hello({
+const app = new Main({
     target: document.body,
 });
-
-console.log('Hello world!');
