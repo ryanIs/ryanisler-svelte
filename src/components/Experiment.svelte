@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  export let project
+  export let experiment
 
   let startDateStr:String = ''
   let endDateStr:String = ''
@@ -22,38 +22,35 @@
     return month + ' ' + d.getUTCFullYear() 
   }
 
-  if (project != null) {
-    
-  console.log(project.title)
-    console.log(project.endDate)
-    if (project.startDate != null && project.startDate != '') {
-      startDateStr = getMYText(project.startDate)
-      if (project.endDate != null && project.endDate != '') {
-        endDateStr = " - " + getMYText(project.endDate)
+  if (experiment != null) {
+    if (experiment.startDate != null && experiment.startDate != '') {
+      startDateStr = getMYText(experiment.startDate)
+      if (experiment.endDate != null && experiment.endDate != '') {
+        endDateStr = " - " + getMYText(experiment.endDate)
       } else {
         endDateStr = " - Present"
       }
     } 
-    else if (project.endDate != null && project.endDate != '') {
-      endDateStr = getMYText(project.endDate)
+    else if (experiment.endDate != null && experiment.endDate != '') {
+      endDateStr = getMYText(experiment.endDate)
     }
   }
 </script>
 
-<div class="project-wrapper uk-card uk-card-default uk-card-body uk-width-1-2@m">
-    <h3 class="uk-card-title">{project.title}</h3>
+<div class="experiment-wrapper uk-card uk-card-default uk-card-body uk-width-1-2@m">
+    <h3 class="uk-card-title">{experiment.title}</h3>
     {#if startDateStr != '' || endDateStr != ''}
       <h4 class="date-header">{startDateStr}{endDateStr}</h4>
     {/if}
-    <img class="proj-img" src={project.image} style={project.imageStyle} alt="Main img" />
-    <p>{project.description}</p>
-    {#if project.productLink != '' && project.productCode != ''}
-      <div class="uk-flex uk-flex-between project-buttons-wrapper">
-        {#if project.productLink != ''}
-          <a href={project.productLink} target="_blank" rel="noreferrer"><button class="project-view view-project" data-project="hearthstone-book">View app</button></a>
+    <img class="proj-img uk-align-center" src={experiment.image} style={experiment.imageStyle} alt="Main img" />
+    <p>{experiment.description}</p>
+    {#if experiment.productLink != '' && experiment.productCode != ''}
+      <div class="uk-flex uk-flex-between experiment-buttons-wrapper">
+        {#if experiment.productLink != ''}
+          <a href={experiment.productLink} target="_blank" rel="noreferrer"><button class="experiment-view view-experiment" data-experiment="hearthstone-book">View app</button></a>
         {/if}
-        {#if project.productCode != ''}
-          <a href={project.productCode} target="_blank" rel="noreferrer"><button class="project-code view-project view-code" data-code="hearthstone-book">View code</button></a>
+        {#if experiment.productCode != ''}
+          <a href={experiment.productCode} target="_blank" rel="noreferrer"><button class="experiment-code view-experiment view-code" data-code="hearthstone-book">View code</button></a>
         {/if}
       </div>
     {/if}
@@ -62,11 +59,13 @@
 <style>
   .proj-img {
     margin-top: 10px;
+    /* margin: 10px auto 0; */
+    display: block;
   }
   
-  .project-wrapper {
+  .experiment-wrapper {
     background: #fff;
-    max-width: 600px;
+    max-width: 300px;
     /* margin: 15px; */
     margin: 0 0 30px;
     opacity: 1;
@@ -76,16 +75,16 @@
     border: 1px solid #eee;
 
     transition: background 1s, border 2s, box-shadow 1s;
-    animation: projectFade 4s;
+    animation: experimentFade 2s;
   }
   
-  .project-wrapper:hover {
+  .experiment-wrapper:hover {
     background: #fdfdfd;
     border: 1px bevel #ccc;
     box-shadow: 0 0 1px 2px rgba(122, 122, 122, 0.1);
   }
 
-  @keyframes projectFade {
+  @keyframes experimentFade {
     0% {
       opacity: 0.0;
     }
@@ -97,7 +96,7 @@
     }
   }
 
-  .project-buttons-wrapper {
+  .experiment-buttons-wrapper {
     /* display: inline-block; */
   }
 
@@ -118,9 +117,16 @@
 
   @media screen and (max-width: 1200px) {
     
-  .project-wrapper {
+  .experiment-wrapper {
     /* margin: 15px; */
     margin: 0;
   }
+
+  @media screen and (max-width: 1200px) {
+  .experiment-wrapper {
+    max-width: auto;
+  }
+  }
+
 }
 </style>

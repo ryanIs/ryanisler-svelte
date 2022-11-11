@@ -7,6 +7,7 @@
   import "uikit/dist/css/uikit.min.css"
   import HeaderGraphic from "./components/HeaderGraphic.svelte"
   import Project from "./components/Project.svelte"
+  import Experiment from "./components/Experiment.svelte"
 
   // import UIKit from 'uikit'
 
@@ -31,23 +32,10 @@
         startDate: "2013-09-01",
         endDate: "",
         technologiesUsed: ["Vue", "JSON", "HTML5", "CSS3", "JavaScript"],
-        image: "/portfolio-files/projects/mortal-kombat-11-helper.png",
-      },
-      {
-        title: "Simple Calculator",
-        description: "This calculator was a fun application I built to test out designing my own unique calculator UX.",
-        startDate: "",
-        endDate: "2018-11-01",
-        technologiesUsed: ["React"],
-        image: "/portfolio-files/projects/easy-notecards.png.png",
-      },
-      {
-        title: "Easy Notecards",
-        description: "Easy notecards is a simple way to memorize things. It uses a two-sided data model.",
-        startDate: "",
-        endDate: "2018-11-01",
-        technologiesUsed: ["Angular", "Node", "JSON"],
-        image: "/portfolio-files/projects/easy-notecards.png.png",
+        productLink: "http://www.ryanisler.com",
+        productCode: "https://github.com/ryanIs/ryanisler-com",
+        image: "/portfolio-files/projects/ryanisler-new.png",
+        imageStyle: ""
       },
       {
         title: "RuneScape Item Tracker",
@@ -56,7 +44,44 @@
         startDate: "",
         endDate: "2019-10-01",
         technologiesUsed: ["Vue", "SASS", "API"],
-        image: "/portfolio-files/projects/easy-notecards.png.png",
+        productLink: "http://ryanisler.com/projects/runescape-2007-item-tracker",
+        productCode: "https://github.com/ryanIs/runescape-2007-item-tracker",
+        image: "/portfolio-files/projects/runescape-item-tracker.png",
+        imageStyle: ""
+      },
+      {
+        title: "Mortal Kombat 11 Helper",
+        description:
+          "Mortal Kombat 11 Helper provides on-the-go frame-data and move input. As a MK11 player, I love having this application to have on-hand while playing against other players.",
+        startDate: "",
+        endDate: "2019-07-01",
+        technologiesUsed: ["Vue", "JSON"],
+        productLink: "http://ryanisler.com/projects/mk11",
+        productCode: "https://github.com/ryanIs/mk11",
+        image: "/portfolio-files/projects/mortal-kombat-11-helper.png",
+        imageStyle: ""
+      },
+      {
+        title: "Simple Calculator",
+        description: "This calculator was a fun application I built to test out designing my own unique calculator UX.",
+        startDate: "",
+        endDate: "2018-11-01",
+        technologiesUsed: ["React"],
+        productLink: "http://ryanisler.com/projects/calculator",
+        productCode: "https://github.com/ryanIs/calculator",
+        image: "/portfolio-files/projects/simple-calculator.png",
+        imageStyle: ""
+      },
+      {
+        title: "Easy Notecards",
+        description: "Easy notecards is a simple way to memorize things. It uses a two-sided data model.",
+        startDate: "",
+        endDate: "2018-11-01",
+        technologiesUsed: ["Angular", "Node", "JSON"],
+        productLink: "",
+        productCode: "",
+        image: "/portfolio-files/projects/easy-notecards.png",
+        imageStyle: "border: 1px solid #eee"
       },
       {
         title: "Expense Tracker",
@@ -64,7 +89,10 @@
         startDate: "",
         endDate: "2018-07-01",
         technologiesUsed: ["React", "Mobile Development"],
+        productLink: "http://ryanisler.com/projects/expense-tracker",
+        productCode: "https://github.com/ryanIs/Expense-Tracker",
         image: "/portfolio-files/projects/expense-tracker.png",
+        imageStyle: ""
       },
       {
         title: "Homework Note",
@@ -73,7 +101,11 @@
         startDate: "",
         endDate: "2018-07-01",
         technologiesUsed: ["React"],
+        productLink: "",
+        productLink__NOT_WORKING: "http://www.ryanisler.com/projects/homework-note",
+        productCode: "https://github.com/ryanIs/HomeworkNote",
         image: "/portfolio-files/projects/homework-note.png",
+        imageStyle: ""
       },
       {
         title: "TeamSolve",
@@ -82,10 +114,25 @@
         startDate: "2016-09-04",
         endDate: "2017-05-24",
         technologiesUsed: ["JavaScript", "Bootstrap", "PHP", "MySQL"],
-        image: "/portfolio-files/experiments/main-teamsolve.png",
+        productLink: "http://www.ryanisler.com/ts",
+        productCode: "https://github.com/ryanIs/TeamSolve",
+        image: "/portfolio-files/projects/teamsolve-main.png",
+        imageStyle: "border: 1px solid #eee"
       },
     ],
     experiments: [
+      {
+        title: "Hearthstone Book",
+        description:
+          "Hearthstone Book is a helper application I designed for viewing cards quickly. This project utilizes a custom API with unique card data.",
+        startDate: "",
+        endDate: "2019-07-01",
+        technologiesUsed: ["Vue", "JSON", "API"],
+        productLink: "http://ryanisler.com/projects/hearthstone-book",
+        productCode: "https://github.com/ryanIs/Hearthstone_Book",
+        image: "/portfolio-files/experiments/hearthstone-book.png",
+        imageStyle: ""
+      },
       {
         title: "Colorful Brushes",
         description:
@@ -93,7 +140,10 @@
         startDate: "",
         endDate: "2019-02-01",
         technologiesUsed: ["Backbone", "LESS", "Require"],
-        image: "/portfolio-files/experiments/",
+        productLink: "http://ryanisler.com/experiments/colorful-brushes",
+        productCode: "https://github.com/ryanIs/ColorfulBrushes",
+        image: "/portfolio-files/experiments/colorful-brushes.png",
+        imageStyle: ""
       },
       {
         title: "Personal Site - Mock-up",
@@ -102,7 +152,10 @@
         startDate: "",
         endDate: "2017-07-01",
         technologiesUsed: ["JavaScript", "CSS3", "HTML5"],
-        image: "/portfolio-files/experiments/",
+        productLink: "http://ryanisler.com/experiments/ryanisler",
+        productCode: "",
+        image: "/portfolio-files/experiments/personal-site.png",
+        imageStyle: "border: 1px solid #eee"
       },
       {
         title: "Storied Spaces",
@@ -111,7 +164,11 @@
         startDate: "",
         endDate: "2017-04-01",
         technologiesUsed: ["JavaScript", "PHP", "MySQL"],
-        image: "/portfolio-files/experiments/",
+        productLink: "",
+        productLink__Prof_Removed_It: "https://dma.hamline.edu/storied-spaces/",
+        productCode: "",
+        image: "/portfolio-files/experiments/storied-spaces.png",
+        imageStyle: ""
       },
       {
         title: "Abstraction Generation",
@@ -120,7 +177,10 @@
         startDate: "",
         endDate: "2016-12-01",
         technologiesUsed: ["AS3", "Graphic Design"],
-        image: "/portfolio-files/experiments/",
+        productLink: "https://dma.hamline.edu/~risler01/tools/generate",
+        productCode: "",
+        image: "/portfolio-files/experiments/abstraction-generation.png",
+        imageStyle: ""
       },
       {
         title: "Comfort Zone",
@@ -129,7 +189,10 @@
         startDate: "",
         endDate: "2016-10-01",
         technologiesUsed: ["JavaScript", "CSS3", "HTML5"],
-        image: "/portfolio-files/experiments/",
+        productLink: "https://dma.hamline.edu/~risler01/advWebDesign/ComfortZone",
+        productCode: "",
+        image: "/portfolio-files/experiments/comfort-zone.png",
+        imageStyle: ""
       },
       {
         title: "Zelda Lost Definitions",
@@ -138,7 +201,10 @@
         startDate: "",
         endDate: "2015-11-01",
         technologiesUsed: ["Scratch", "JavaScript", "CSS3", "HTML5"],
+        productLink: "https://dma.hamline.edu/~risler01/digitalMediaArts/projects/project-3/scratch.html",
+        productCode: "https://scratch.mit.edu/projects/58824298",
         image: "/portfolio-files/experiments/zelda.png",
+        imageStyle: "border: 1px solid #eee"
       },
       {
         title: "Hypercube",
@@ -146,7 +212,10 @@
         startDate: "",
         endDate: "2015-10-01",
         technologiesUsed: ["JavaScript", "CSS3", "HTML5"],
+        productLink: "https://dma.hamline.edu/~risler01/webDesign/projects/Project3",
+        productCode: "",
         image: "/portfolio-files/experiments/hypercube.png",
+        imageStyle: ""
       },
       {
         title: "Piano App",
@@ -155,7 +224,10 @@
         startDate: "",
         endDate: "2013-12-01",
         technologiesUsed: ["AS2", "Music"],
+        productLink: "http://ryanisler.com/experiments/piano",
+        productCode: "",
         image: "/portfolio-files/experiments/piano.png",
+        imageStyle: ""
       },
       {
         title: "Applicants Application",
@@ -164,7 +236,10 @@
         startDate: "",
         endDate: "2013-12-01",
         technologiesUsed: ["AS3", "XML", "UI/UX"],
+        productLink: "http://ryanisler.com/experiments/applicants",
+        productCode: "",
         image: "/portfolio-files/experiments/applicants.png",
+        imageStyle: ""
       },
       {
         title: "Stone Quest",
@@ -173,7 +248,10 @@
         startDate: "",
         endDate: "2013-11-01",
         technologiesUsed: ["C++", "Game Dev", "Shell App", "TI-83"],
+        productLink: "",
+        productCode: "https://github.com/ryanIs/stone-quest",
         image: "/portfolio-files/experiments/stone-quest.png",
+        imageStyle: ""
       },
       {
         title: "Chord Player",
@@ -182,7 +260,10 @@
         startDate: "",
         endDate: "2013-10-01",
         technologiesUsed: ["C++", "Game Dev", "Shell App"],
+        productLink: "",
+        productCode: "https://github.com/ryanIs/chord-player",
         image: "/portfolio-files/experiments/chord-player.png",
+        imageStyle: ""
       },
       {
         title: "Isler Brothers - Mock-up",
@@ -191,7 +272,10 @@
         startDate: "",
         endDate: "2013-06-01",
         technologiesUsed: ["JavaScript", "CSS3", "HTML5"],
+        productLink: "http://ryanisler.com/experiments/islerbrothers-mock/index.html",
+        productCode: "",
         image: "/portfolio-files/experiments/isler-brothers.png",
+        imageStyle: ""
       },
       {
         title: "Japanese App",
@@ -200,7 +284,10 @@
         startDate: "",
         endDate: "2012",
         technologiesUsed: ["AS3", "Japanese"],
+        productLink: "http://ryanisler.com/experiments/japanese",
+        productCode: "",
         image: "/portfolio-files/experiments/japanese.png",
+        imageStyle: ""
       },
       {
         title: "YouDraw",
@@ -209,7 +296,10 @@
         startDate: "",
         endDate: "2011-08-01",
         technologiesUsed: ["AS3"],
-        image: "/portfolio-files/experiments/you-draw.png",
+        productLink: "http://ryanisler.com/experiments/youdraw",
+        productCode: "",
+        image: "/portfolio-files/experiments/youdraw.png",
+        imageStyle: ""
       },
       {
         title: "Math Quiz",
@@ -218,7 +308,10 @@
         startDate: "",
         endDate: "2010-06-01",
         technologiesUsed: ["AS3", "Game Dev", "Music Comp"],
+        productLink: "http://ryanisler.com/experiments/math-quiz",
+        productCode: "",
         image: "/portfolio-files/experiments/math-quiz.png",
+        imageStyle: ""
       },
     ],
     current: [
@@ -228,7 +321,10 @@
         startDate: "2022-10-01",
         endDate: "",
         technologiesUsed: ["TypeScript", "React", "SASS", "Node"],
+        productLink: "",
+        productCode: "",
         image: "/portfolio-files/projects/lor-helper.png",
+        imageStyle: ""
       },
       {
         title: "Stone King Franchise API",
@@ -237,7 +333,10 @@
         startDate: "2022-07-01",
         endDate: "",
         technologiesUsed: ["Go", "PostgreSQL", "REST"],
+        productLink: "",
+        productCode: "",
         image: "/portfolio-files/projects/stone-king-api.png",
+        imageStyle: ""
       },
       {
         title: "Food Items",
@@ -245,18 +344,32 @@
         startDate: "2021-04-01",
         endDate: "",
         technologiesUsed: ["Angular", "", ""],
+        productLink: "",
+        productCode: "",
         image: "/portfolio-files/projects/food-items.png",
+        imageStyle: ""
       },
     ],
     misc: {},
   }
 </script>
 
-<div class="main-wrapper">
+<div class="main-wrapper" id="projects">
 
-  <div style="height: 30px;"></div>
+  <!-- <div style="height: 30px;"></div> -->
 
-  <nav class="uk-navbar-container" uk-navbar="align: center">
+  <nav class="uk-navbar-container" uk-navbar>
+
+    <div class="top-left-floating">
+      <a href="https://github.com/ryanIs" target="_blank"  rel="noreferrer" title="View my GitHub proejcts!">
+        <img src="/portfolio-files/other/github.svg" alt="Git" />
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ryan-isler-184907ba/" target="_blank"  rel="noreferrer" title="View my LinkedIn!">
+        <img class="non-first-img" src="/portfolio-files/other/linkedin.svg" alt="Git" />
+      </a>
+    </div>
+
     <div class="uk-navbar-center">
       <ul class="uk-navbar-nav">
         <li>
@@ -273,14 +386,21 @@
   </nav>
 
   <div class="header">
-    <!-- <HeaderGraphic /> -->
-    <div class="uk-margin text-align: center;">Ryan Isler</div>
+    <HeaderGraphic />
   </div>
   <div class="content-wrapper">
-    <div class="projects">
+    <div class="projects uk-grid uk-flex uk-flex-around">
       {#if projects != null}
         {#each projects["projects"] as project}
           <Project project={project} />
+        {/each}
+      {/if}
+    </div>
+
+    <div class="experiments uk-grid" id="experiments">
+      {#if projects != null}
+        {#each projects["experiments"] as experiment}
+          <Experiment experiment={experiment} />
         {/each}
       {/if}
     </div>
@@ -288,6 +408,40 @@
 </div>
 
 <style>
+  
+  .experiments {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .top-left-floating {
+    position: absolute;
+    display: inline-flex;
+    top: 3px;
+    left: 0;
+    /* width: 0;
+    height: 0; */
+    flex-direction: horizontal;
+  }
+
+  .top-left-floating img {
+    width: auto;
+    height: 20px;
+    margin-left: 10px;
+    opacity: 0.2;
+    /* display: inline-block; */
+
+    transition: opacity 0.4s;
+  }
+
+  .non-first-img {
+    margin-left: 15px !important;
+  }
+
+  .top-left-floating img:hover {
+    opacity: 0.6;
+  }
+
   .uk-navbar-nav li a {
     /* display: inline-block; */
     min-height: auto;
@@ -299,6 +453,7 @@
     /* font-weight: bold; */
 
   }
+  
   @keyframes navIntro {
     0% {
       top: -35px;
@@ -317,6 +472,8 @@
     top: 0;
     left: 0;
     animation: navIntro 1.4s;
+    z-index: 9999;
+    min-height: 30px;
   }
 
   .uk-navbar-container {
@@ -324,5 +481,14 @@
     /* background: linear-gradient(#fdfdfd, #fcfcfc); */
     border-bottom: 1px solid #eee;
     /* font-size: 10px !important; */
+    position: fixed;
+  }
+
+  @media screen and (max-width: 1200px) {
+      
+    .experiments {
+      max-width: auto;
+      /* margin: 0 auto; */
+    }
   }
 </style>
