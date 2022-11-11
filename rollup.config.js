@@ -9,6 +9,8 @@ import atImport from 'postcss-import';
 import html from '@rollup/plugin-html';
 import livereload from 'rollup-plugin-livereload';
 import sveltePreprocess from 'svelte-preprocess';
+import commonjs from '@rollup/plugin-commonjs'
+import css from 'rollup-plugin-css-only'
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -22,6 +24,8 @@ export default {
 		sourcemap: true
 	},
 	plugins: [
+    // css({ output: 'bundle.css' }),
+
 		typescript(),
         svelte({
             include: 'src/**/*.svelte',
@@ -48,11 +52,33 @@ export default {
             ]
         }),
         resolve({ browser: true }),
+        
+        commonjs(),
+
         html({
+            // template: ({ attributes, bundle, files, publicPath, title }) => `<!DOCTYPE html>
+            // <html ${attributes}>
+            //   <head>
+            //     ${bundle}
+            //     <title>${title}</title>
+            //     aaa
+            //     ${files}
+            //   </head>
+            //   <body>
+            //     ${publicPath}
+            //   </body>
+            // </html>
+            // `,
+            // // attributes: {
+            // //   links: {
+            // //     "link": "https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/js/uikit.min.js"
+            // //   }
+            // // },
             title: 'Svelte-rollup-boilerplate'
         }),
         !production && livereload({
-            watch: 'dist'
+            watch: ['dist', 'src']
+            // watch: 'dist'
         }),
 		production && terser() // minify, but only in production
 	]
