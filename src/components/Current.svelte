@@ -47,7 +47,7 @@
     {/if}
     <img class="proj-img" src={project.image} style={project.imageStyle} alt="Main img" />
     <p>{project.description}</p>
-    {#if project.productLink != '' || project.productCode != ''}
+    <!-- {#if project.productLink != '' || project.productCode != ''}
       <div class="uk-flex uk-flex-between project-buttons-wrapper">
         {#if project.productLink != ''}
           <a href={project.productLink} target="_blank" rel="noreferrer"><button class="project-view view-project" data-project="hearthstone-book">View app</button></a>
@@ -56,7 +56,7 @@
           <a href={project.productCode} target="_blank" rel="noreferrer"><button class="project-code view-project view-code" data-code="hearthstone-book">View code</button></a>
         {/if}
       </div>
-    {/if}
+    {/if} -->
 </div>
 
 <style>
@@ -92,11 +92,9 @@
     }
     20% {
       opacity: 0.0;
-      margin-top: 200px;
     }
     100% {
       opacity: 1;
-      margin-top: 0;
     }
   }
 

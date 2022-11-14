@@ -35,22 +35,25 @@
       endDateStr = getMYText(experiment.endDate)
     }
   }
+
+  console.log(experiment.productLink != '')
+  console.log(experiment.productCode != '')
 </script>
 
 <div class="experiment-wrapper uk-card uk-card-default uk-card-body uk-width-1-2@m">
-    <h3 class="uk-card-title">{experiment.title}</h3>
+    <h3 class="uk-card-title">&#10023; {experiment.title}</h3>
     {#if startDateStr != '' || endDateStr != ''}
       <h4 class="date-header">{startDateStr}{endDateStr}</h4>
     {/if}
     <img class="proj-img uk-align-center" src={experiment.image} style={experiment.imageStyle} alt="Main img" />
     <p>{experiment.description}</p>
-    {#if experiment.productLink != '' && experiment.productCode != ''}
+    {#if experiment.productLink != '' || experiment.productCode != ''}
       <div class="uk-flex uk-flex-between experiment-buttons-wrapper">
         {#if experiment.productLink != ''}
-          <a href={experiment.productLink} target="_blank" rel="noreferrer"><button class="experiment-view view-experiment" data-experiment="hearthstone-book">View app</button></a>
+          <a href={experiment.productLink} target="_blank" rel="noreferrer"><button class="experiment-view view-project" data-experiment="hearthstone-book">App</button></a>
         {/if}
         {#if experiment.productCode != ''}
-          <a href={experiment.productCode} target="_blank" rel="noreferrer"><button class="experiment-code view-experiment view-code" data-code="hearthstone-book">View code</button></a>
+          <a href={experiment.productCode} target="_blank" rel="noreferrer"><button class="experiment-code view-project view-code" data-code="hearthstone-book">Code</button></a>
         {/if}
       </div>
     {/if}
@@ -67,7 +70,7 @@
     background: #fff;
     max-width: 300px;
     /* margin: 15px; */
-    margin: 0 0 30px;
+    margin: 0 0 21px;
     opacity: 1;
 
     /* box-shadow: none !important; */
@@ -107,6 +110,7 @@
     /* text-transform: uppercase; */
     /* color: #5555dd !important; */
     margin-bottom: 0;
+    font-size: 16px;
   }
 
   h4 {

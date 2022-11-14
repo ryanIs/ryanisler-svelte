@@ -8,6 +8,7 @@
   import HeaderGraphic from "./components/HeaderGraphic.svelte"
   import Project from "./components/Project.svelte"
   import Experiment from "./components/Experiment.svelte"
+  import Current from "./components/Current.svelte"
 
   // import UIKit from 'uikit'
 
@@ -35,7 +36,7 @@
         productLink: "http://www.ryanisler.com",
         productCode: "https://github.com/ryanIs/ryanisler-com",
         image: "/portfolio-files/projects/ryanisler-new.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "RuneScape Item Tracker",
@@ -47,7 +48,7 @@
         productLink: "http://ryanisler.com/projects/runescape-2007-item-tracker",
         productCode: "https://github.com/ryanIs/runescape-2007-item-tracker",
         image: "/portfolio-files/projects/runescape-item-tracker.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Mortal Kombat 11 Helper",
@@ -59,7 +60,7 @@
         productLink: "http://ryanisler.com/projects/mk11",
         productCode: "https://github.com/ryanIs/mk11",
         image: "/portfolio-files/projects/mortal-kombat-11-helper.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Simple Calculator",
@@ -70,7 +71,7 @@
         productLink: "http://ryanisler.com/projects/calculator",
         productCode: "https://github.com/ryanIs/calculator",
         image: "/portfolio-files/projects/simple-calculator.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Easy Notecards",
@@ -81,7 +82,7 @@
         productLink: "",
         productCode: "",
         image: "/portfolio-files/projects/easy-notecards.png",
-        imageStyle: "border: 1px solid #eee"
+        imageStyle: "border: 1px solid #eee",
       },
       {
         title: "Expense Tracker",
@@ -92,7 +93,7 @@
         productLink: "http://ryanisler.com/projects/expense-tracker",
         productCode: "https://github.com/ryanIs/Expense-Tracker",
         image: "/portfolio-files/projects/expense-tracker.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Homework Note",
@@ -105,7 +106,7 @@
         productLink__NOT_WORKING: "http://www.ryanisler.com/projects/homework-note",
         productCode: "https://github.com/ryanIs/HomeworkNote",
         image: "/portfolio-files/projects/homework-note.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "TeamSolve",
@@ -117,7 +118,7 @@
         productLink: "http://www.ryanisler.com/ts",
         productCode: "https://github.com/ryanIs/TeamSolve",
         image: "/portfolio-files/projects/teamsolve-main.png",
-        imageStyle: "border: 1px solid #eee"
+        imageStyle: "border: 1px solid #eee",
       },
     ],
     experiments: [
@@ -131,7 +132,7 @@
         productLink: "http://ryanisler.com/projects/hearthstone-book",
         productCode: "https://github.com/ryanIs/Hearthstone_Book",
         image: "/portfolio-files/experiments/hearthstone-book.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Colorful Brushes",
@@ -143,7 +144,7 @@
         productLink: "http://ryanisler.com/experiments/colorful-brushes",
         productCode: "https://github.com/ryanIs/ColorfulBrushes",
         image: "/portfolio-files/experiments/colorful-brushes.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Personal Site - Mock-up",
@@ -155,7 +156,7 @@
         productLink: "http://ryanisler.com/experiments/ryanisler",
         productCode: "",
         image: "/portfolio-files/experiments/personal-site.png",
-        imageStyle: "border: 1px solid #eee"
+        imageStyle: "border: 1px solid #eee",
       },
       {
         title: "Storied Spaces",
@@ -168,7 +169,7 @@
         productLink__Prof_Removed_It: "https://dma.hamline.edu/storied-spaces/",
         productCode: "",
         image: "/portfolio-files/experiments/storied-spaces.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Abstraction Generation",
@@ -180,7 +181,7 @@
         productLink: "https://dma.hamline.edu/~risler01/tools/generate",
         productCode: "",
         image: "/portfolio-files/experiments/abstraction-generation.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Comfort Zone",
@@ -192,7 +193,7 @@
         productLink: "https://dma.hamline.edu/~risler01/advWebDesign/ComfortZone",
         productCode: "",
         image: "/portfolio-files/experiments/comfort-zone.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Zelda Lost Definitions",
@@ -204,7 +205,7 @@
         productLink: "https://dma.hamline.edu/~risler01/digitalMediaArts/projects/project-3/scratch.html",
         productCode: "https://scratch.mit.edu/projects/58824298",
         image: "/portfolio-files/experiments/zelda.png",
-        imageStyle: "border: 1px solid #eee"
+        imageStyle: "border: 1px solid #eee",
       },
       {
         title: "Hypercube",
@@ -215,7 +216,7 @@
         productLink: "https://dma.hamline.edu/~risler01/webDesign/projects/Project3",
         productCode: "",
         image: "/portfolio-files/experiments/hypercube.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Piano App",
@@ -227,7 +228,7 @@
         productLink: "http://ryanisler.com/experiments/piano",
         productCode: "",
         image: "/portfolio-files/experiments/piano.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Applicants Application",
@@ -239,7 +240,7 @@
         productLink: "http://ryanisler.com/experiments/applicants",
         productCode: "",
         image: "/portfolio-files/experiments/applicants.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Stone Quest",
@@ -251,7 +252,7 @@
         productLink: "",
         productCode: "https://github.com/ryanIs/stone-quest",
         image: "/portfolio-files/experiments/stone-quest.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Chord Player",
@@ -263,7 +264,7 @@
         productLink: "",
         productCode: "https://github.com/ryanIs/chord-player",
         image: "/portfolio-files/experiments/chord-player.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Isler Brothers - Mock-up",
@@ -275,7 +276,7 @@
         productLink: "http://ryanisler.com/experiments/islerbrothers-mock/index.html",
         productCode: "",
         image: "/portfolio-files/experiments/isler-brothers.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Japanese App",
@@ -287,7 +288,7 @@
         productLink: "http://ryanisler.com/experiments/japanese",
         productCode: "",
         image: "/portfolio-files/experiments/japanese.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "YouDraw",
@@ -299,7 +300,7 @@
         productLink: "http://ryanisler.com/experiments/youdraw",
         productCode: "",
         image: "/portfolio-files/experiments/youdraw.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Math Quiz",
@@ -311,7 +312,7 @@
         productLink: "http://ryanisler.com/experiments/math-quiz",
         productCode: "",
         image: "/portfolio-files/experiments/math-quiz.png",
-        imageStyle: ""
+        imageStyle: "",
       },
     ],
     current: [
@@ -324,7 +325,7 @@
         productLink: "",
         productCode: "",
         image: "/portfolio-files/projects/lor-helper.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Stone King Franchise API",
@@ -336,7 +337,7 @@
         productLink: "",
         productCode: "",
         image: "/portfolio-files/projects/stone-king-api.png",
-        imageStyle: ""
+        imageStyle: "",
       },
       {
         title: "Food Items",
@@ -347,25 +348,30 @@
         productLink: "",
         productCode: "",
         image: "/portfolio-files/projects/food-items.png",
-        imageStyle: ""
+        imageStyle: "",
       },
     ],
     misc: {},
   }
+
+  let thisYear = new Date().getFullYear()
 </script>
 
 <div class="main-wrapper" id="projects">
-
   <!-- <div style="height: 30px;"></div> -->
 
   <nav class="uk-navbar-container" uk-navbar>
-
     <div class="top-left-floating">
-      <a href="https://github.com/ryanIs" target="_blank"  rel="noreferrer" title="View my GitHub proejcts!">
+      <a href="https://github.com/ryanIs" target="_blank" rel="noreferrer" title="View my GitHub proejcts!">
         <img src="/portfolio-files/other/github.svg" alt="Git" />
       </a>
-      
-      <a href="https://www.linkedin.com/in/ryan-isler-184907ba/" target="_blank"  rel="noreferrer" title="View my LinkedIn!">
+
+      <a
+        href="https://www.linkedin.com/in/ryan-isler-184907ba/"
+        target="_blank"
+        rel="noreferrer"
+        title="View my LinkedIn!"
+      >
         <img class="non-first-img" src="/portfolio-files/other/linkedin.svg" alt="Git" />
       </a>
     </div>
@@ -373,13 +379,13 @@
     <div class="uk-navbar-center">
       <ul class="uk-navbar-nav">
         <li>
-          <a href="#projects" class="uk-active">Projects</a>
+          <a href="#projects" class="uk-active">&#10043; Projects</a>
         </li>
         <li>
-          <a href="#experiments">Experiments</a>
+          <a href="#experiments">&#10023; Experiments</a>
         </li>
         <li>
-          <a href="#current">Current</a>
+          <a href="#current">&#10018; Current</a>
         </li>
       </ul>
     </div>
@@ -388,30 +394,72 @@
   <div class="header">
     <HeaderGraphic />
   </div>
+
   <div class="content-wrapper">
     <div class="projects uk-grid uk-flex uk-flex-around">
       {#if projects != null}
         {#each projects["projects"] as project}
-          <Project project={project} />
+          <Project {project} />
         {/each}
       {/if}
     </div>
 
-    <div class="experiments uk-grid" id="experiments">
+    <div class="experiments uk-grid uk-flex uk-flex-around" id="experiments">
       {#if projects != null}
         {#each projects["experiments"] as experiment}
-          <Experiment experiment={experiment} />
+          <Experiment {experiment} />
+        {/each}
+      {/if}
+    </div>
+
+    <div class="current uk-grid uk-flex uk-flex-around" id="current">
+      {#if projects != null}
+        {#each projects["current"] as current}
+          <Current project={current} />
         {/each}
       {/if}
     </div>
   </div>
+
+  <footer>
+    <p class="follow">Ryan Isler - {thisYear}</p>
+    <div class="footer-links uk-flex uk-flex-between">
+      <a href="https://github.com/ryanIs/" target="_blank" title="Check out my GitHub." rel="noreferrer">
+        <img src="/portfolio-files/other/github.svg" alt="Git" /></a
+      >
+      <a href="https://www.linkedin.com/in/ryan-isler-184907ba/" target="_blank" title="Check out my LinkedIn." rel="noreferrer">
+        <img src="/portfolio-files/other/linkedin.svg" alt="Git" /></a
+      >
+      <a href="https://twitter.com/RyanIsl" target="_blank" title="Check out my Twitter feed." rel="noreferrer">
+        <img src="/portfolio-files/other/twitter.svg" alt="Twitter" />
+      </a>
+      <a href="https://ryanisler.com/r" target="_blank" title="Personal Site!" rel="noreferrer">
+        <img src="/portfolio-files/other/r.svg" alt="Personal" />
+      </a>
+    </div>
+  </footer>
 </div>
 
 <style>
-  
-  .experiments {
+  .projects {
     max-width: 1600px;
     margin: 0 auto;
+    /* margin-left: 0; */
+    margin-bottom: 100px;
+  }
+
+  .experiments {
+    max-width: 1600px;
+    margin-bottom: 100px;
+    margin: 0 auto;
+  }
+
+  .current {
+    
+    max-width: 1600px;
+    margin-bottom: 300px;
+    margin: 0 auto;
+
   }
 
   .top-left-floating {
@@ -451,9 +499,8 @@
     /* font-size: 12px !imporstant; */
     /* letter-spacing: 2px; */
     /* font-weight: bold; */
-
   }
-  
+
   @keyframes navIntro {
     0% {
       top: -35px;
@@ -485,10 +532,73 @@
   }
 
   @media screen and (max-width: 1200px) {
-      
     .experiments {
       max-width: auto;
       /* margin: 0 auto; */
     }
+  }
+
+  footer p {
+    text-align: center;
+  }
+
+  /* footer span {
+    width: 188px;
+    display: block;
+    margin: 0 auto;
+  } */
+
+  footer a {
+    color: #345dc3;
+    text-decoration: none;
+    transition: color 0.5s;
+    display: inline-block;
+  }
+
+  footer a:hover {
+    color: #90afff;
+  }
+
+  footer {
+    font-size: 0.9em;
+    color: #aaaaaa;
+    /* background: #172d64; */
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    /* padding: 50px 10px; */
+    padding: 20px 10px 40px;
+    /* box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2); */
+
+    /* border-radius: 0 200px 0 0; */
+  }
+
+  footer img {
+    width: auto;
+    height: 20px;
+    /* height: 25px; */
+    /* margin-left: 10px; */
+    opacity: 0.2;
+    /* display: inline-block; */
+    transition: opacity 0.4s;
+    /* filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg); */
+
+    /* mix-blend-mode: multiply; */
+  }
+
+  /* footer img svg {
+    fill: #90afff;
+
+  } */
+
+  footer img:hover {
+    opacity: 0.6;
+    /* fill: #90afff; */
+    /* filter: hue-rotate(180deg); */
+    /* filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg); */
+  }
+
+  .footer-links {
+    max-width: 200px;
+    margin: 0 auto;
   }
 </style>
