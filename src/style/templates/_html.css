@@ -88,3 +88,15 @@ body {
 .view-code {
 	border: 1px solid orange;
 }
+
+
+@media screen and (max-width: 386px) {
+  .uk-flex.project-buttons-wrapper {
+    /* display: inline-flex !important; */
+    display: inline;
+  }
+
+  .uk-flex.project-buttons-wrapper a {
+    margin-left: 10px;
+  }
+}

@@ -1,31 +1,21 @@
 <script lang="ts">
-  import { onMount } from "svelte"
+  /**
+   * Current.svelte
+   */
+
   export let project
 
   let startDateStr:String = ''
   let endDateStr:String = ''
 
-
-
   const getMYText = (dateStr:String) => {
     const d = new Date(dateStr)
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    // const d = new Date("2021-03-25");
     let month = months[d.getMonth()];
-
-    // var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    // var day = dateObj.getUTCDate();
-    // var year = dateObj.getUTCFullYear();
-
-    // return + month + "/" + day; year + "/" 
     return month + ' ' + d.getUTCFullYear() 
   }
 
   if (project != null) {
-    
-  // console.log(project.title)
-    // console.log(project.endDate)
     if (project.startDate != null && project.startDate != '') {
       startDateStr = getMYText(project.startDate)
       if (project.endDate != null && project.endDate != '') {
@@ -40,8 +30,8 @@
   }
 </script>
 
-<div class="project-wrapper uk-card uk-card-default uk-card-body uk-width-1-2@m">
-    <h3 class="uk-card-title">&#10043; {project.title}</h3>
+<div class="project-wrapper uk-card uk-card-default uk-card-body uk-width-1-1">
+    <h3 class="uk-card-title">&#10018; {project.title}</h3>
     {#if startDateStr != '' || endDateStr != ''}
       <h4 class="date-header">{startDateStr}{endDateStr}</h4>
     {/if}
@@ -66,24 +56,24 @@
   
   .project-wrapper {
     background: #fff;
-    max-width: 600px;
+    max-width: 900px;
     /* margin: 15px; */
     /* margin: 0 0 30px; */
-    margin: 0 0 45px;
+    margin: 0 0 100px;
     opacity: 1;
 
     /* box-shadow: none !important; */
-    box-shadow: none;
+    /* box-shadow: none; */
     border: 1px solid #eee;
 
-    transition: background 1s, border 2s, box-shadow 1s, margin-bottom 1.5s;
+    transition: background 1s, border 2s, box-shadow 1s;
     animation: projectFade 4s;
   }
   
   .project-wrapper:hover {
     background: #fdfdfd;
     border: 1px bevel #ccc;
-    box-shadow: 0 0 1px 2px rgba(122, 122, 122, 0.1);
+    /* box-shadow: 0 0 1px 2px rgba(122, 122, 122, 0.1); */
   }
 
   @keyframes projectFade {
@@ -117,12 +107,11 @@
     margin: 0 0 10px;
   }
 
-  @media screen and (max-width: 1200px) {
-    
-  .project-wrapper {
-    /* margin: 15px; */
-    /* margin: 0; */
-    margin: 0;
+  @media screen and (max-width: 960px) {
+    .project-wrapper {
+      /* margin: 15px; */
+      /* margin: 0; */
+      margin: 0;
+    }
   }
-}
 </style>

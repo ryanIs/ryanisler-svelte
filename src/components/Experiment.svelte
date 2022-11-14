@@ -1,24 +1,17 @@
 <script lang="ts">
-  import { onMount } from "svelte"
+  /**
+   * Experiment.svelte
+   */
+
   export let experiment
 
   let startDateStr:String = ''
   let endDateStr:String = ''
 
-
-
   const getMYText = (dateStr:String) => {
     const d = new Date(dateStr)
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    // const d = new Date("2021-03-25");
     let month = months[d.getMonth()];
-
-    // var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    // var day = dateObj.getUTCDate();
-    // var year = dateObj.getUTCFullYear();
-
-    // return + month + "/" + day; year + "/" 
     return month + ' ' + d.getUTCFullYear() 
   }
 
@@ -35,9 +28,6 @@
       endDateStr = getMYText(experiment.endDate)
     }
   }
-
-  console.log(experiment.productLink != '')
-  console.log(experiment.productCode != '')
 </script>
 
 <div class="experiment-wrapper uk-card uk-card-default uk-card-body uk-width-1-2@m">
@@ -120,17 +110,9 @@
   }
 
   @media screen and (max-width: 1200px) {
-    
-  .experiment-wrapper {
-    /* margin: 15px; */
-    margin: 0;
+    .experiment-wrapper {
+      margin: 0;
+      max-width: auto;
+    }
   }
-
-  @media screen and (max-width: 1200px) {
-  .experiment-wrapper {
-    max-width: auto;
-  }
-  }
-
-}
 </style>

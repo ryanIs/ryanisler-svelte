@@ -1,31 +1,21 @@
 <script lang="ts">
-  import { onMount } from "svelte"
+  /**
+   * Project.svelte
+   */
+
   export let project
 
   let startDateStr:String = ''
   let endDateStr:String = ''
 
-
-
   const getMYText = (dateStr:String) => {
     const d = new Date(dateStr)
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    // const d = new Date("2021-03-25");
     let month = months[d.getMonth()];
-
-    // var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    // var day = dateObj.getUTCDate();
-    // var year = dateObj.getUTCFullYear();
-
-    // return + month + "/" + day; year + "/" 
     return month + ' ' + d.getUTCFullYear() 
   }
 
   if (project != null) {
-    
-  // console.log(project.title)
-    // console.log(project.endDate)
     if (project.startDate != null && project.startDate != '') {
       startDateStr = getMYText(project.startDate)
       if (project.endDate != null && project.endDate != '') {
@@ -120,11 +110,10 @@
   }
 
   @media screen and (max-width: 1200px) {
-    
-  .project-wrapper {
-    /* margin: 15px; */
-    /* margin: 0; */
-    margin: 0;
+    .project-wrapper {
+      /* margin: 15px; */
+      /* margin: 0; */
+      margin: 0;
+    }
   }
-}
 </style>

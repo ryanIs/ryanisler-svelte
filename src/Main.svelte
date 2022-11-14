@@ -4,32 +4,21 @@
    *
    * This is the main svelte file which has the top-level view for the site.
    */
+
   import "uikit/dist/css/uikit.min.css"
   import HeaderGraphic from "./components/HeaderGraphic.svelte"
   import Project from "./components/Project.svelte"
   import Experiment from "./components/Experiment.svelte"
   import Current from "./components/Current.svelte"
 
-  // import UIKit from 'uikit'
+  const PROJECTS_JSON_URL = '/json/projects.json'
 
-  // on production: will get project data JSON from /json
-
-  let projects = {
+  let defaultProjects = {
     projects: [
-      // {
-      //   "title": "",
-      //   "description": "",
-      //   "startDate": "",
-      //   "endDate": "",
-      //   "technologiesUsed": [
-      //     "", "", ""
-      //   ],
-      //   "image": "/portfolio-files/projects/"
-      // },
       {
         title: "Personal Website",
         description:
-          "I created a custom website for showcasing my other digital works. These projects include web games, original music and more.",
+          "I created a custom website for showcasing my other digital works. These projects include web games, original music and more. The newest available is version 4.0.",
         startDate: "2013-09-01",
         endDate: "",
         technologiesUsed: ["Vue", "JSON", "HTML5", "CSS3", "JavaScript"],
@@ -325,7 +314,7 @@
         productLink: "",
         productCode: "",
         image: "/portfolio-files/projects/lor-helper.png",
-        imageStyle: "",
+        imageStyle: "border: 1px solid #eee",
       },
       {
         title: "Stone King Franchise API",
@@ -337,7 +326,7 @@
         productLink: "",
         productCode: "",
         image: "/portfolio-files/projects/stone-king-api.png",
-        imageStyle: "",
+        imageStyle: "border: 1px solid #eee",
       },
       {
         title: "Food Items",
@@ -348,97 +337,126 @@
         productLink: "",
         productCode: "",
         image: "/portfolio-files/projects/food-items.png",
-        imageStyle: "",
+        imageStyle: "border: 1px solid #eee",
       },
     ],
     misc: {},
   }
 
+  let projects = defaultProjects
+
+  let loadingTextClass = 'loading-text'
+
+  // 1 loading. 0 display
+  let promiseStatus = 1
+  let projectsPromise = fetch(PROJECTS_JSON_URL)
+    .then(res => res.json())
+    .then(data => {
+      projects = data
+      promiseStatus = 0
+      // loadingTextClass = 'loading-text load-fade'
+      // setTimeout(() => {
+      //   promiseStatus = 0
+      // }, 1000);
+    })
+    // .then(data => console.log(data))
+    .catch(res => {
+      console.log('Unable to fetch JSON. Utilizing default data.')
+      // promiseStatus = 0
+    })
+
   let thisYear = new Date().getFullYear()
 </script>
 
-<div class="main-wrapper" id="projects">
-  <!-- <div style="height: 30px;"></div> -->
+{#if promiseStatus == 0}
+  <div class="main-wrapper" id="projects">
+    <!-- <div style="height: 30px;"></div> -->
 
-  <nav class="uk-navbar-container" uk-navbar>
-    <div class="top-left-floating">
-      <a href="https://github.com/ryanIs" target="_blank" rel="noreferrer" title="View my GitHub proejcts!">
-        <img src="/portfolio-files/other/github.svg" alt="Git" />
-      </a>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="top-left-floating">
+        <a href="https://github.com/ryanIs" target="_blank" rel="noreferrer" title="View my GitHub proejcts!">
+          <img src="/portfolio-files/other/github.svg" alt="Git" />
+        </a>
 
-      <a
-        href="https://www.linkedin.com/in/ryan-isler-184907ba/"
-        target="_blank"
-        rel="noreferrer"
-        title="View my LinkedIn!"
-      >
-        <img class="non-first-img" src="/portfolio-files/other/linkedin.svg" alt="Git" />
-      </a>
+        <a
+          href="https://www.linkedin.com/in/ryan-isler-184907ba/"
+          target="_blank"
+          rel="noreferrer"
+          title="View my LinkedIn!"
+        >
+          <img class="non-first-img" src="/portfolio-files/other/linkedin.svg" alt="Git" />
+        </a>
+      </div>
+
+      <div class="uk-navbar-center">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="#projects" class="uk-active">&#10043; Projects</a>
+          </li>
+          <li>
+            <a href="#experiments">&#10023; Experiments</a>
+          </li>
+          <li>
+            <a href="#current">&#10018; Current</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="header">
+      <HeaderGraphic />
     </div>
 
-    <div class="uk-navbar-center">
-      <ul class="uk-navbar-nav">
-        <li>
-          <a href="#projects" class="uk-active">&#10043; Projects</a>
-        </li>
-        <li>
-          <a href="#experiments">&#10023; Experiments</a>
-        </li>
-        <li>
-          <a href="#current">&#10018; Current</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <div class="content-wrapper">
+      <div class="projects uk-grid uk-flex uk-flex-around">
+        {#if projects != null}
+          {#each projects["projects"] as project}
+            <Project {project} />
+          {/each}
+        {/if}
+      </div>
 
-  <div class="header">
-    <HeaderGraphic />
+      <div class="experiments uk-grid uk-flex uk-flex-around" id="experiments">
+        {#if projects != null}
+          {#each projects["experiments"] as experiment}
+            <Experiment {experiment} />
+          {/each}
+        {/if}
+      </div>
+
+      <div class="current uk-grid uk-flex uk-flex-around" id="current">
+        {#if projects != null}
+          {#each projects["current"] as current}
+            <Current project={current} />
+          {/each}
+        {/if}
+      </div>
+    </div>
+
+    <footer>
+      <p class="follow">Ryan Isler - {thisYear}</p>
+      <div class="footer-links uk-flex uk-flex-between">
+        <a href="https://github.com/ryanIs/" target="_blank" title="Check out my GitHub!" rel="noreferrer">
+          <img src="/portfolio-files/other/github.svg" alt="Git" /></a
+        >
+        <a href="https://www.linkedin.com/in/ryan-isler-184907ba/" target="_blank" title="Check out my LinkedIn!" rel="noreferrer">
+          <img src="/portfolio-files/other/linkedin.svg" alt="Git" /></a
+        >
+        <a href="https://twitter.com/RyanIsl" target="_blank" title="Check out my Twitter feed!" rel="noreferrer">
+          <img src="/portfolio-files/other/twitter.svg" alt="Twitter" />
+        </a>
+        <a href="https://ryanisler.com/r" target="_blank" title="Personal Site!" rel="noreferrer">
+          <img src="/portfolio-files/other/r.svg" alt="Personal" />
+        </a>
+      </div>
+    </footer>
   </div>
-
-  <div class="content-wrapper">
-    <div class="projects uk-grid uk-flex uk-flex-around">
-      {#if projects != null}
-        {#each projects["projects"] as project}
-          <Project {project} />
-        {/each}
-      {/if}
-    </div>
-
-    <div class="experiments uk-grid uk-flex uk-flex-around" id="experiments">
-      {#if projects != null}
-        {#each projects["experiments"] as experiment}
-          <Experiment {experiment} />
-        {/each}
-      {/if}
-    </div>
-
-    <div class="current uk-grid uk-flex uk-flex-around" id="current">
-      {#if projects != null}
-        {#each projects["current"] as current}
-          <Current project={current} />
-        {/each}
-      {/if}
-    </div>
-  </div>
-
-  <footer>
-    <p class="follow">Ryan Isler - {thisYear}</p>
-    <div class="footer-links uk-flex uk-flex-between">
-      <a href="https://github.com/ryanIs/" target="_blank" title="Check out my GitHub." rel="noreferrer">
-        <img src="/portfolio-files/other/github.svg" alt="Git" /></a
-      >
-      <a href="https://www.linkedin.com/in/ryan-isler-184907ba/" target="_blank" title="Check out my LinkedIn." rel="noreferrer">
-        <img src="/portfolio-files/other/linkedin.svg" alt="Git" /></a
-      >
-      <a href="https://twitter.com/RyanIsl" target="_blank" title="Check out my Twitter feed." rel="noreferrer">
-        <img src="/portfolio-files/other/twitter.svg" alt="Twitter" />
-      </a>
-      <a href="https://ryanisler.com/r" target="_blank" title="Personal Site!" rel="noreferrer">
-        <img src="/portfolio-files/other/r.svg" alt="Personal" />
-      </a>
-    </div>
-  </footer>
-</div>
+{:else}
+  <p class={loadingTextClass}>
+    <!-- <span class="spin-dude">&#x27f2;</span> Loading... -->
+    <span class="spin-dude">&#10050;</span> Loading...
+  </p>
+{/if}
 
 <style>
   .projects {
@@ -450,17 +468,53 @@
 
   .experiments {
     max-width: 1600px;
-    margin-bottom: 100px;
     margin: 0 auto;
+    margin-bottom: 100px;
   }
 
   .current {
-    
     max-width: 1600px;
-    margin-bottom: 300px;
     margin: 0 auto;
-
+    /* margin-bottom: 150px; */
+    margin-bottom: 100px;
   }
+
+  .loading-text {
+    width: 100px;
+    margin: 30px auto;
+    color: #aaa;
+    font-size: 20px;
+    position: relative;
+    
+    transition: opacity 1s;
+    animation: loadingIntro 1s;
+  }
+
+  @keyframes loadingIntro {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .load-fade {
+    opacity: 0;
+  }
+
+  .spin-dude {
+    position: absolute;
+    left: -30px;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* width: 120px; */
+    /* height: 120px; */
+    /* margin:-60px 0 0 -60px; */
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin { 100% { transform: rotate(360deg); transform:rotate(360deg); } }
 
   .top-left-floating {
     position: absolute;
@@ -535,6 +589,28 @@
     .experiments {
       max-width: auto;
       /* margin: 0 auto; */
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    .uk-navbar-nav li a {
+      padding: 5px; 
+    }
+
+    .top-left-floating {
+      display: none;
+    }
+  }
+
+  /* why */
+  @media screen and (max-width: 248px) {
+    .uk-navbar-nav li a {
+      padding: 0; 
+      font-size: 10px !important;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+
+      border-radius: 50px;
     }
   }
 
